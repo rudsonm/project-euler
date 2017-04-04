@@ -43,9 +43,13 @@ public class Problem_11 {
             if(columnPrd > max) {
                 max = columnPrd;
             }
-            int diagonalPrd = getDiagonalPrd(numbers, i);
-            if(diagonalPrd > max) {
-                max = diagonalPrd;
+            int rightDiagonalPrd = getRightDiagonalPrd(numbers, i);
+            if(rightDiagonalPrd > max) {
+                max = rightDiagonalPrd;
+            }
+            int leftDiagonalPrd = getLeftDiagonalPrd(numbers, i);
+            if(leftDiagonalPrd > max) {
+                max = leftDiagonalPrd;
             }
         }
         System.out.println(max);
@@ -75,13 +79,25 @@ public class Problem_11 {
         return prd;
     }
     
-    public int getDiagonalPrd(String[] numbers, int position) {
+    public int getRightDiagonalPrd(String[] numbers, int position) {
         if(position % 20 > 16 || position / 20 > 16) {            
             return 0;
         }
         int prd = 1, number;
         for (int i = 0; i < 4; i++) {
             number = Integer.parseInt(numbers[position + i * 20 + i]);
+            prd *= number;
+        }
+        return prd;
+    }
+    
+    public int getLeftDiagonalPrd(String[] numbers, int position) {
+        if(position % 20 < 3 || position / 20 > 16) {
+            return 0;
+        }
+        int prd = 1, number;
+        for (int i = 0; i < 4; i++) {
+            number = Integer.parseInt(numbers[position + i * 20 - i]);
             prd *= number;
         }
         return prd;
