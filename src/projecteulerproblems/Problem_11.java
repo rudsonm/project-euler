@@ -38,17 +38,14 @@ public class Problem_11 {
             int linePrd = getLinePrd(numbers, i);
             if(linePrd > max) {
                 max = linePrd;
-                System.out.println("line" + i % 20);
             }
             int columnPrd = getColumnPrd(numbers, i);
             if(columnPrd > max) {
                 max = columnPrd;
-                System.out.println("column" + i / 20);
             }
             int diagonalPrd = getDiagonalPrd(numbers, i);
             if(diagonalPrd > max) {
                 max = diagonalPrd;
-                System.out.println("diagonal" + i % 20);
             }
         }
         System.out.println(max);
