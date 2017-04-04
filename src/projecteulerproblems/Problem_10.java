@@ -11,4 +11,27 @@ package projecteulerproblems;
  */
 public class Problem_10 {
     
+    public boolean isPrime(int num) {
+        if(num <= 1) {
+            return false;
+        }
+        for (int i = 2; i < num; i++) {
+            if(num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public Problem_10() {        
+        long sum = 0;
+        int prime = 0;
+        while(prime < 2000000) {
+            if(isPrime(prime)) {
+                sum += prime;
+            }
+            prime++;
+        }
+        System.out.println(sum);
+    }
 }
