@@ -9,13 +9,6 @@ package projecteulerproblems;
  *
  * @author rudsonm
  */
-public class ProjectEulerProblems {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        new Problem_9();
-    }
+public class Problem_10 {
     
 }
