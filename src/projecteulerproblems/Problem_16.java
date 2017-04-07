@@ -15,12 +15,14 @@ public class Problem_16 {
     public Problem_16() {
         BigInteger num = BigInteger.valueOf(2);
         BigInteger exp = BigInteger.valueOf(1);
-        BigInteger sum = BigInteger.valueOf(0);
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             exp = exp.multiply(num);
         }
-        for (int i = 0; i < sum.toString().length(); i++) {
-            
+        String number = exp.toString();
+        int sum = 0;
+        for (int i = 0; i < number.length(); i++) {
+            sum += Integer.parseInt(String.valueOf(number.charAt(i)));
         }
+        System.out.println(sum);
     }
 }
